@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Principal</title>
+</head>
+
+<body>
+    <div >
+
+        <% if(receita.length == 0){ %>
+        	<p> Nada a declarar da receita </p>
+    	<% } else { %>
+
+    		<% for(var i = 0; i < receita.length; i++) { %>
+    			<p> itens receita aqui </p>
+    		<% } %>
+
+    	<% } %>
+
+
+
+        <% if(despesa.length == 0){ %>
+        	<p> Nada a declarar da despesa </p>
+    	<% } else { %>
+
+    		<% for(var i = 0; i < despesa.length; i++) { %>
+    			<p> itens despesa aqui </p>
+    		<% } %>
+
+    	<% } %>
+
+
+    	<button id = "novoItem"> Adicionar novo item </button>
+    	<button id = "previsao"> Previsao </button>
+    	<button id = "sair"> Sair </button>
+
+    	<div id = "formularioNovoItem" style = "display : none ">
+    		<form method = "post" action = "/novoItem" >
+            	<input type="text" name = "nomeItem" placeholder="Nome do Item" required/>
+	            <select id = "periodo">
+	            	<option value="mes" selected>Mensal</option>
+	            	<option value="ano">Anual</option>
+	            </select>
+	            <select id = "tipo">
+	            	<option value="receita" selected>Receita</option>
+	            	<option value="despesa">Despesa</option>
+	            </select>
+
+	            <input id = "periodoSelecionado" name="periodoSelecionado" style = "display: none"/>
+	            <input id = "tipoSelecionado" name="tipoSelecionado" style = "display: none"/>
+
+	            <button id = "enviarNovoItem" >Criar item</button>
+       		</form>
+    	</div>
+
+
+    </div>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src = "/javascripts/home.js"></script>
+
+
+</html>

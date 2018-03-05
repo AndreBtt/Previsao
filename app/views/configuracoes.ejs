@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Item</title>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+
+<body>
+    <div>
+
+    	<h3> <%= item.nome %> </h3>
+
+    	<table id="tblData" border="1" cellpadding="2">
+    		<thead>
+    			<th>Ano</th>
+    			<th>Valor</th>
+    		</thead>
+    		<tbody id="tblbody">
+    			<% 
+    				var currentTime = new Date();
+    				var ano = currentTime.getFullYear();
+    			%>
+    			<tr id = <%= ano %>>
+    				<td> <%= ano %> </td>
+    				<td> <input type="number" step="0.01" min = "0" val="-1"> </td>
+    			</tr>
+    		</tbody>
+    	</table>
+
+    	<button id = "novoPeriodo">Adicionar novo ano</button>
+
+    	<div id="grafico"></div>
+
+    </div>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src = "/javascripts/configuracoes.js"></script>
+
+</html>
