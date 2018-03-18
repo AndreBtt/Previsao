@@ -39,7 +39,10 @@ module.exports.novoItem = function(app,req,res){
         historico : []
     };
 
-    res.render('configuracoes', {item : item});
-
-
+    if(periodo === "mes"){
+        res.render('configuracoesMes', {item : item});
+    }
+    else{
+        res.render('configuracoesAno', {item : item});
+    }
 }
